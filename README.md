@@ -24,6 +24,6 @@ To run this application locally, simply open a terminal in the root directory of
 `sh local-startup.sh`. The application will be available at `http://localhost:5000/prism`. Please refer to the API
 documentation provided by OpenAPI at `http://localhost:5000/prism/swagger-ui/index.html`.
 
-Additionally, you may find [this Postman collection](https://github.com/220207-java-enterprise/prism/blob/main/src/main/resources/prism.postman_collection.json)
+Additionally, you may find [this Postman collection](https://github.com/220509-web-dev/prism/blob/main/src/main/resources/Prism.postman_collection.json)
 useful for helping you to understand what valid requests to the core PRISM endpoints look like. If you have questions, 
 issues, or comments regarding this application please feel free to open an issue on this repository.
