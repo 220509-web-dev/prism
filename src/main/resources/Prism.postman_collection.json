@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "750d8cdc-1e30-4a1c-9467-a3e66f958f71",
+		"name": "Prism",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Organization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"TestOrg\",\n    \"key\": \"my-secret-key\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/organizations",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orgId\": \"REPLACE-ME\",\n    \"authCode\": \"REPLACE-ME\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Org Info",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orgId\": \"REPLACE-ME\",\n    \"orgName\": \"REPLACE-ME\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/organizations",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Org Auth Code",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orgId\": \"REPLACE-ME\",\n    \"orgKey\": \"REPLACE-ME\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/auth/code",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"auth",
+						"code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Organization",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/organizations/REPLACE-ME",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations",
+						"REPLACE-ME"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Employee To Org",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Tester\",\n    \"lastName\": \"McTesterson\",\n    \"emailAddress\": \"test@innov8.dev\",\n    \"accountInfo\": {\n        \"institutionName\": \"Test Bank\",\n        \"accountNumber\": \"111222333\",\n        \"routingNumber\": \"123456789\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Employee To Org 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "REPLACE-ME"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Alice\",\n    \"lastName\": \"Anderson\",\n    \"emailAddress\": \"aanderson@innov8.dev\",\n    \"accountInfo\": {\n        \"institutionName\": \"Test Bank\",\n        \"accountNumber\": \"111333555\",\n        \"routingNumber\": \"123456789\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Org Employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Org Employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees/REPLACE-ME",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees",
+						"REPLACE-ME"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Org Employee",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"REPLACE-ME\",\n    \"emailAddress\": \"alice.anderson@innov8.dev\",\n    \"accountInfo\": {\n        \"accountNumber\": \"111222323\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate Org Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees/REPLACE-ME",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees",
+						"REPLACE-ME"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reactivate Org Employee",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees/REPLACE-ME",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees",
+						"REPLACE-ME"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "REPLACE-ME",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payeeId\": \"REPLACE-ME\",\n    \"paymentAmount\": 100.01\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger UI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/prism/swagger-ui/index.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"swagger-ui",
+						"index.html"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

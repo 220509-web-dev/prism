@@ -1,0 +1,10 @@
+server:
+  port: 5000
+  servlet:
+    context-path: /prism
+
+spring:
+  application:
+    name: prism
+  profiles:
+    default: local
